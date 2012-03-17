@@ -8,6 +8,16 @@
 </head>
 <body>
 	<%= render 'shared/strip' %>
+
+<% flash.each do |key, msg| %>
+	<%= content_tag :div, msg, :class => ["flash #{key}"] %>
+<% end %>
+
+	<% if current_user %>
+		<p>We got ourselves a user signed in.</p>
+		<p>His email is <%= current_user.email %></p>
+	<% end %>
+
 	<%= yield %>
 
 </body>

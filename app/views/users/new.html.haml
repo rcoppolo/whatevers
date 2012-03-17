@@ -1,7 +1,6 @@
 %h2 Sign up
 = form_for @user do |f|
   - if @user.errors.any?
-    %h3 Form is invalid
     %ul 
       - for message in @user.errors.full_messages
         %li= message
