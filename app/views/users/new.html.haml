@@ -1,17 +1,15 @@
-%h2 Sign up
 = form_for @user do |f|
   - if @user.errors.any?
-    %ul 
+    .something
       - for message in @user.errors.full_messages
-        %li= message
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :password
+        %p= message
+  .something
+    = f.text_field :email, value: "Click here and type your email."
+  .something
     = f.password_field :password
-  .field
-    = f.label :password_confirmation
+    = text_field_tag :user_fake_password, "Then pick a good password and put it here"
+  .something
     = f.password_field :password_confirmation
-  .actions
-    = f.submit
+    = text_field_tag :user_fake_password_confirmation, "and again here."
+  .something
+    = f.submit "Looks good. Click here to sign up.", id: "submit"

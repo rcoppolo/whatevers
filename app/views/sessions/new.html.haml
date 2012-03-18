@@ -1,14 +1,11 @@
-%h1 Log in
-
 = form_tag sessions_path do
-  .field
-    = label_tag :email
+  .something
     = text_field_tag :email, params[:email]
-  .field
-    = label_tag :password
+  .something
     = password_field_tag :password, params[:password]
-  .field
+    = text_field_tag :fake_password, params[:fake], value: "and put your password here."
+  .something
     = label_tag :remember_me
     = check_box_tag :remember_me, 1, true
-  .actions
-    = submit_tag "Log in"
+  .something
+    = submit_tag "Click here to sign in.", id: 'submit'

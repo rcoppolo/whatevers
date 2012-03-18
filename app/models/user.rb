@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	attr_accessible :email, :password, :password_confirmation
 	has_secure_password
-	validates :password, presence: true, on: :create
+	validates :password, presence: true, on: :create, length: {minimum: 6}
 	validates :email, presence: true, on: :create
 	before_create { generate_token(:auth_token) }
 
