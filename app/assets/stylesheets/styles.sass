@@ -12,7 +12,6 @@ body
     color: inherit
 
   header
-    margin: 0 auto
     text-align: left
     padding: 0 15px 0 15px
     line-height: 2.5em
@@ -27,20 +26,21 @@ body
       padding-left: 15px
 
   #container
-    text-align: left
     //background: rgba(0,0,0,.02)
     padding: 1px
     min-height: 100%
-    height: 100%
     padding-top: 0
+    height: 100%
     border-bottom: 1px solid rgba(255,255,255,0.1)
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.1)
     //@include linear-gradient($light, $white)
     
     .something
+      text-align: left
       padding: .5em 15px .5em 15px
       background: white
       line-height: 1.6
+      max-width: 640px
       border-top: 1px solid rgba(0,0,0,0.1)
       box-shadow: 0 2px 4px rgba(0,0,0,0.1)
       border-radius: 2px
@@ -59,3 +59,10 @@ body
 
       input#submit
         cursor: pointer
+  #button
+    background: black
+    height: 0
+    width: 0
+    border-radius: 2px
+    border-top: 1px solid rgba(0,0,0,0.1)
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1)
