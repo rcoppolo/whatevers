@@ -1,0 +1,9 @@
+#somethings
+  = render 'somethings/somethings', :somethings => @somethings
+= form_for @user.somethings.build, remote: true, class: 'something_new' do |f|
+  .something
+    = f.hidden_field :parent_id
+    = f.hidden_field :parent_type
+    = f.text_field :content
+  .something
+    = f.submit "Looks good.", id: "submit"

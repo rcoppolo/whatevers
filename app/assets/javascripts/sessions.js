@@ -5,15 +5,16 @@ $(function() {
 	var fake_password = $('#fake_password');
 	var submit = $('#submit').parent();
 
-	if(password.val()==='') {
+	if ( !email.val() ) {
 		email.val('Click here and type your email');
-	};
+	}
 
-	if(password.val()!=='') {
+	if( password.val() ) {
 		fake_password.hide();
 	} else {
 		password.hide();
 	};
+
 	//submit.hide();
 
 	email.focus(function() {
@@ -23,7 +24,7 @@ $(function() {
 	});
 
 	email.blur(function() {
-		if(email.val()===''){
+		if( !email.val() ){
 			email.val('Click here and type your email');
 		} else {
 			// mad validations bro
@@ -36,7 +37,7 @@ $(function() {
 	});
 
 	password.blur(function() {
-		if(password.val()===''){
+		if( !password.val() ){
 			password.hide();
 			fake_password.show();
 		} else {

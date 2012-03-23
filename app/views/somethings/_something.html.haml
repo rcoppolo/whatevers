@@ -1,0 +1,5 @@
+= form_for something, remote: true do |f|
+  = f.hidden_field :parent_type
+  = f.hidden_field :parent_id
+  = f.text_field :content, value: something.content
+  = link_to "Delete", something, method: :delete, remote: true
