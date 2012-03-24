@@ -1,1 +1,3 @@
 $('#somethings').html("<%= escape_javascript(render 'somethings/somethings', :somethings => current_user.somethings ) %>");
+$('#something_new').fadeOut(0);
+$('#something_new').html("<%= escape_javascript(render 'somethings/something_new', :user => current_user ) %>");

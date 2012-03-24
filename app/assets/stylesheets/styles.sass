@@ -2,6 +2,9 @@ $white: rgba(0,0,0,.001)
 $light: rgba(0,0,0,0.03)
 $main-font: Georgia, Times, serif
 
+html, body
+  height: 100%
+
 body
   font-size: 100%
   font-family: $main-font
@@ -25,17 +28,19 @@ body
       float: right
       padding-left: 15px
 
+  .add_something
+    background: rgba(0,0,0,.035)
+    cursor: pointer
+
   #container
-    //background: rgba(0,0,0,.02)
     padding: 1px
-    min-height: 100%
     padding-top: 0
     height: 100%
     border-bottom: 1px solid rgba(255,255,255,0.1)
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.1)
     //@include linear-gradient($light, $white)
     
-    .something
+    .something, #something_new
       text-align: left
       padding: .5em 15px .5em 15px
       background: white
@@ -57,12 +62,22 @@ body
         &:focus
           outline: none
 
+
       input#submit
         cursor: pointer
+
+      a.delete
+        display: none
+        line-height: 2.272
+        float: right
+        font-size: 0.71em
+        color: rgba(0,0,0,0.3)
+
+      a.almost
+        color: #E00000
+
   #button
-    background: black
-    height: 0
-    width: 0
     border-radius: 2px
+    height: 100%
     border-top: 1px solid rgba(0,0,0,0.1)
     box-shadow: 0 2px 4px rgba(0,0,0,0.1)

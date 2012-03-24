@@ -1,10 +1,30 @@
 $(function() {
-	$('header').click(function(){
-		$('#button').animate({
-			background: 'white',
-			height: '2.5em',
-			width: '2.5em'
-		}, 250);
-		$('#button').css('background','white');
+	
+	var something_new = $('#something_new');
+	something_new.toggle();
+
+	var new_something_input = something_new.find('input#something_content');
+
+	$('.something').hover(function() {
+		$(this).find('a.delete').fadeIn(100);
+	}, function() {
+		$(this).find('a.delete').fadeOut(100)
+	});
+
+	$('#button').hover(function() {
+		$(this).addClass('add_something');
+	}, function() {
+		$(this).removeClass('add_something');
+	});
+
+	$('#button').click(function() {
+		something_new.fadeIn(100);
+		new_something_input.focus();
+	});
+
+	new_something_input.blur(function() {
+		if( !$(this).val() ) {
+			something_new.fadeOut(100);
+		}
 	});
 });

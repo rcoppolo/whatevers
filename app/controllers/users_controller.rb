@@ -19,4 +19,12 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@somethings = @user.somethings
 	end
+
+	def home
+		if current_user
+			redirect_to user_path(current_user)
+		else
+			redirect_to signin_path
+		end
+	end
 end
