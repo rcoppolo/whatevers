@@ -1,4 +1,4 @@
 = form_for user.somethings.build, remote: true do |f|
   = f.hidden_field :parent_id
-  = f.hidden_field :parent_class
+  = f.hidden_field :parent_type
   = f.text_field :content, autocomplete: :off
