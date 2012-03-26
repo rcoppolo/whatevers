@@ -5,6 +5,8 @@ Whatevers::Application.routes.draw do
 	match '/signin' => 'sessions#new'
 	match '/signout' => 'sessions#destroy'
 	match '/signup' => 'users#new'
+	
+	match '/hi' => 'pages#home'
 
 	root :to => 'users#home'
 

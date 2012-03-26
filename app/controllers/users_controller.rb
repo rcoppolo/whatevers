@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 		if current_user
 			redirect_to user_path(current_user)
 		else
-			redirect_to signin_path
+			redirect_to hi_path
 		end
 	end
 end
