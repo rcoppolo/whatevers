@@ -5,10 +5,13 @@ $(function() {
 
 	var new_something_input = something_new.find('input#something_content');
 
-	$('.something').hover(function() {
-		$(this).find('a.delete').fadeIn(100);
-	}, function() {
-		$(this).find('a.delete').fadeOut(100)
+	$('.something').live({
+		mouseenter: function() {
+			$(this).find('a.delete').fadeIn(150);
+		},
+		mouseleave: function() {
+			$(this).find('a.delete').fadeOut(150)
+		}
 	});
 
 	$('#button').hover(function() {
@@ -17,14 +20,20 @@ $(function() {
 		$(this).removeClass('add_something');
 	});
 
-	$('#button').click(function() {
-		something_new.fadeIn(100);
-		new_something_input.focus();
-	});
 
-	new_something_input.blur(function() {
-		if( !$(this).val() ) {
-			something_new.fadeOut(100);
+	new_something_input.live({
+		blur: function() {
+			if( !$(this).val() ) {
+				something_new.fadeOut(100);
+			}
 		}
 	});
+});
+
+
+$('#button').live({
+	click: function() {
+		$('#something_new').fadeIn(150);
+		$('#something_new').find('input#something_content').focus();
+	}
 });
