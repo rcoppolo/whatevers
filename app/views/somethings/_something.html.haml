@@ -2,4 +2,5 @@
   = f.hidden_field :parent_type
   = f.hidden_field :parent_id
   = f.text_field :content, value: something.content, autocomplete: :off
-  = link_to "Delete", something, method: :delete, remote: true, class: "delete"
+  = link_to "You sure?", something, method: :delete, remote: true, class: "delete"
+  = link_to "Delete", '#', class: "notquite"
